@@ -22,17 +22,15 @@
     <main>
         <section id="about">
             <h2>About Me</h2>
-            <p>
-                This is the first paragraph in my website, and it's a basic description of who I am and what my website is <b>about</b>.
-            </p> 
-            <p>Eaque atque laborum magni facere fugiat exercitationem est eum. Nihil saepe dolorem adipisci delectus molestiae soluta. Molestiae exercitationem consequatur non. Voluptas et dicta eum dolore magnam culpa perspiciatis quod. Labore a voluptates suscipit sit ad pariatur delectus ut. Qui quasi qui deserunt ut deleniti dolorum.</p>
-            <p>Eaque atque laborum magni facere fugiat exercitationem est eum. Nihil saepe dolorem adipisci delectus molestiae soluta. Molestiae exercitationem consequatur non. Voluptas et dicta eum dolore magnam culpa perspiciatis quod. Labore a voluptates suscipit sit ad pariatur delectus ut. Qui quasi qui deserunt ut deleniti dolorum.</p>
-            <p>Eaque atque laborum magni facere fugiat exercitationem est eum. Nihil saepe dolorem adipisci delectus molestiae soluta. Molestiae exercitationem consequatur non. Voluptas et dicta eum dolore magnam culpa perspiciatis quod. Labore a voluptates suscipit sit ad pariatur delectus ut. Qui quasi qui deserunt ut deleniti dolorum.</p>
+                <p>Thomas Barr is the author of several short stories, a few poems, and <i>Billing Ablutions</i>, a dystopian realist novel for which he is actively seeking representation. He is based in New York City. </p>
+
+            
         </section>
         <section id="subscribe">
             <h2>Join Newsletter</h2>
-            <p> I send periodic fiction to subscribers by email newsletter, along with updates on publications. </p>
-
+            <p> I send periodic fiction to subscribers by email newsletter once per month, along with updates on publications.</p>
+            <p>You may be wondering: Why not write a blog on one of the many platforms that exist? The short answer is: I want a reader-writer relationship that is as direct as possible. That means that when you subscribe, you'll get words sent directly to your inbox once a month. Nothing more, nothing less.</p>
+            
             <form id="emailForm">
                 <input type="email" name="email" placeholder="Enter your email" required>
                 <button type="submit">Join Newsletter</button>
@@ -41,7 +39,7 @@
             <div id="message"></div>
 
             <script>
-                const scriptURL = "https://script.google.com/macros/s/AKfycbyUlyFWAKu-uKVp213Pf8Q_1jN5pKn86FjxBOwZqQd7GYGpqejG7d1QRgHekriUx1J0Eg/exec";
+                const scriptURL = "https://script.google.com/macros/s/AKfycbyBVZ_SrR1kThTO-31gRcUkVMMcwUEqF1UVuA-o9pXsqXqfdW9-wbLexrVXajgMBQvRSg/exec";
                 const form = document.getElementById('emailForm');
                 const msg = document.getElementById('message');
 
@@ -54,7 +52,7 @@
                 body: new FormData(form)
             })
                 .then(response => {
-                msg.innerHTML = "Success! You've been added.";
+                msg.innerHTML = "Success! You've been added. Check for a welcome email with a confirmation link.";
                 form.reset();
             })
                 .catch(error => {
