@@ -4,99 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thomas Barr | Writer</title>
-    <style>
-        /* Minimalist Styling */
-        body {
-            font-family: "Georgia", serif; /* Serif fonts are classic for writers */
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            background-color: #fafafa;
-        }
-
-        header {
-            border-bottom: 1px solid #eee;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-        }
-
-        h1 { font-weight: normal; margin-bottom: 0.5rem; }
-        
-        nav a {
-            text-decoration: none;
-            color: #666;
-            margin-right: 15px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav a:hover { color: #000; }
-
-        section { margin-bottom: 3rem; }
-
-        .profile-photo {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            margin-bottom: 1.5rem;
-            display: block;
-            }
-
-        .work-item { margin-bottom: 1.5rem; }
-        
-        .work-item h3 { margin-bottom: 0.2rem; }
-
-        .date { font-style: italic; color: #888; font-size: 0.9rem; }
-
-        footer {
-            font-size: 0.8rem;
-            color: #999;
-            margin-top: 4rem;
-            border-top: 1px solid #eee;
-            padding-top: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <h1>Thomas Barr</h1>
         <nav>
+            <a href="index.html" class="nav-button">Home</a>
             <a href="#about">About</a>
-            <a href="#work">Selected Work</a>
+            <a href="work.html" class="nav-button">Selected Work</a>
+            <a href="#subscribe">Join Newsletter</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <main>
         <section id="about">
-            <img src="me_at_ny_story_night.jpg"
-                alt="Thomas Barr"
-                class="profile-photo">
-            <p>I am a writer based in New York City specializing in irrealist fiction. I am looking to publish my first novel <i>The Price of Presence</i> and welcome outreach from literary agents and publishers.<p> 
+            <h2>About Me</h2>
+            <p>
+                This is the first paragraph in my website, and it's a basic description of who I am and what my website is <b>about</b>.
+            </p> 
+            <p>Eaque atque laborum magni facere fugiat exercitationem est eum. Nihil saepe dolorem adipisci delectus molestiae soluta. Molestiae exercitationem consequatur non. Voluptas et dicta eum dolore magnam culpa perspiciatis quod. Labore a voluptates suscipit sit ad pariatur delectus ut. Qui quasi qui deserunt ut deleniti dolorum.</p>
+            <p>Eaque atque laborum magni facere fugiat exercitationem est eum. Nihil saepe dolorem adipisci delectus molestiae soluta. Molestiae exercitationem consequatur non. Voluptas et dicta eum dolore magnam culpa perspiciatis quod. Labore a voluptates suscipit sit ad pariatur delectus ut. Qui quasi qui deserunt ut deleniti dolorum.</p>
+            <p>Eaque atque laborum magni facere fugiat exercitationem est eum. Nihil saepe dolorem adipisci delectus molestiae soluta. Molestiae exercitationem consequatur non. Voluptas et dicta eum dolore magnam culpa perspiciatis quod. Labore a voluptates suscipit sit ad pariatur delectus ut. Qui quasi qui deserunt ut deleniti dolorum.</p>
         </section>
+        <section id="subscribe">
+            <h2>Join Newsletter</h2>
+            <p> I send periodic fiction to subscribers by email newsletter, along with updates on publications. </p>
 
-        <section id="work">
-            <h2>Selected Work</h2>
-            
-            <div class="work-item">
-                <h3>The Price of Presence</h3>
-                <span class="date">Seeking Publication, 2026</span>
-                <p> Hushed ruptures in law and technology mean that New Yorkers are automatically tolled for their bodily presence in public: on park benches, on subway platforms, in the fast lane of the sidewalk... A corporate climber who should know better wants to go to court over the twenty dollars he owes. Joining forces with a lawyer out of his depth, the two must break free from the very real purgatory that contains those who run afoul with the system. </p>
+            <form id="emailForm">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Join Newsletter</button>
+            </form>
+
+            <div id="message"></div>
+
+            <script>
+                const scriptURL = "https://script.google.com/macros/s/AKfycbyUlyFWAKu-uKVp213Pf8Q_1jN5pKn86FjxBOwZqQd7GYGpqejG7d1QRgHekriUx1J0Eg/exec";
+                const form = document.getElementById('emailForm');
+                const msg = document.getElementById('message');
+
+                form.addEventListener('submit', e => {
+                e.preventDefault();
+                msg.innerHTML = "Submitting...";
+
+                fetch(scriptURL, { 
+                method: 'POST', 
+                body: new FormData(form)
+            })
+                .then(response => {
+                msg.innerHTML = "Success! You've been added.";
+                form.reset();
+            })
+                .catch(error => {
+                    msg.innerHTML = "It looks like an extension in your browser does not agree with my signup button. Try disabling adblock and try again. If no success, you can request signup directly by emailing barr.tho.a@gmail.com";
+                    console.error('Error!', error.message);
+                });
+            });
+            </script>
 
 
-            </div>
-
-            <div class="work-item">
-                <h3>Object-Oriented Fiction</h3>
-                <span class="date">Samples available, 2025</span>
-                <p> Stories of objects lost, found, and held.   </p>
-            </div>
         </section>
-
         <section id="contact">
             <h2>Contact</h2>
             <p>Get in touch! Reach me at <strong>barr.tho.a@gmail.com</strong></p>
