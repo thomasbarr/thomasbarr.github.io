@@ -8,62 +8,50 @@
 </head>
 <body>
 
-    <header>
+    <header id="top">
         <h1>Thomas Barr</h1>
         <nav>
-            <a href="index.html" class="nav-button">Home</a>
-            <a href="index.html#about" class="nav-button">About</a>
-            <a href="work.html" class="nav-button">Selected Work</a>
-            <a href="index.html#subscribe" class="nav-button">Join Newsletter</a>
-            <a href="index.html#contact" class="nav-button">Contact</a>
+            <a href="#top" class="nav-button">Home</a>
+            <a href="#about" class="nav-button">About</a>
+            <a href="#publications" class="nav-button">Selected Work</a>
+            <a href="#contact" class="nav-button">Contact</a>
         </nav>
     </header>
 
     <main>
         <section id="about">
             <h2>About Me</h2>
-                <p>Thomas Barr is the author of several short stories, a few poems, and <i>Billing Ablutions</i>, a dystopian realist novel for which he is actively seeking representation. He is based in New York City. </p>
-
-            
+            <p>Thomas Barr is the author of several short stories, a few poems, and an unpublished novel. He is based in New York City.</p>
         </section>
-        <section id="subscribe">
-            <h2>Join Newsletter</h2>
-            <p> I send periodic fiction to subscribers by email newsletter once per month, along with updates on publications.</p>
-            <p>You may be wondering: Why not write a blog on one of the many platforms that exist? The short answer is: I want a reader-writer relationship that is as direct as possible. That means that when you subscribe, you'll get words sent directly to your inbox once a month. Nothing more, nothing less.</p>
-            
-            <form id="emailForm">
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <button type="submit">Join Newsletter</button>
-            </form>
 
-            <div id="message"></div>
+        <section id="publications">
+            <h2>Selected Work</h2>
+            <h3>Flash</h3>
+                <ul>
+                    <li><a href="https://bendinggenres.com/i-consented/" target="_blank" rel="noopener">"I Consented"</a>, Bending Genres. Issue Fifty-One, 2026. </li>
 
-            <script>
-                const scriptURL = "https://script.google.com/macros/s/AKfycbyBVZ_SrR1kThTO-31gRcUkVMMcwUEqF1UVuA-o9pXsqXqfdW9-wbLexrVXajgMBQvRSg/exec";
-                const form = document.getElementById('emailForm');
-                const msg = document.getElementById('message');
+                    <i>...A stone as I am may drive up from the mantle and shrivel out of liquid into solid, not unlike those wild berries that have pitched themselves from the brambles over and over onto the dirt, and sit on the edge for eons until some living thing proposes an action...</i>
+                </ul>
+                <ul>
+                    <li><a href="https://samhillreview.com/" target="_blank" rel="noopener">"Brahmagupta's Pacing Orbit"</a>, The Sam Hill! Review. Forthcoming. </li>
 
-                form.addEventListener('submit', e => {
-                e.preventDefault();
-                msg.innerHTML = "Submitting...";
+                        <i>...I looked at nothing but scratches on the sheaf. Brahmagupta paced in a broad circle around the rotunda. As he passed the periapsis of my own body, I felt the wind off his dhoti and scrambled for my lamp black oil to confirm what I had just written...</i>
+                    
+                </ul>
+            <h3>Short</h3>
+                <ul>
+                    <li><a href="https://twistedriverreview.com/" target="_blank" rel="noopener"> "Mississippi Models"</a>, Twisted River Review. Forthcoming. </li>
 
-                fetch(scriptURL, { 
-                method: 'POST', 
-                body: new FormData(form)
-            })
-                .then(response => {
-                msg.innerHTML = "Success! You've been added. Check for a welcome email with a confirmation link.";
-                form.reset();
-            })
-                .catch(error => {
-                    msg.innerHTML = "It looks like an extension in your browser does not agree with my signup button. Try disabling adblock and try again. If no success, you can request signup directly by emailing barr.tho.a@gmail.com";
-                    console.error('Error!', error.message);
-                });
-            });
-            </script>
+                        <i>...And beside the mountainous sky, billowing blue and indigo curtains between faint smears of white, are real mountains...</i>
+                </ul>
+                <ul>
+                    <li><a>"Corn Barge"</a>, Not Yet Published.</li>
 
+                        <i> I ended up in the grain barge because of a girl. She has always been getting me into trouble. I was seeking to tame her up on top of the moonlit grain chute between the silo and the river barge, but because of her and her fickleness (yes, her and her fickleness) I ended up in the grain barge. And that is why...</i>
+                </ul>
 
         </section>
+
         <section id="contact">
             <h2>Contact</h2>
             <p>Get in touch! Reach me at <strong>barr.tho.a@gmail.com</strong></p>
